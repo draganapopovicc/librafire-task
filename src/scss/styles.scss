@@ -1,0 +1,12 @@
+//base
+@import './base/font';
+@import './base/resets';
+@import './base/variables';
+@import './base/common-style';
+
+// Block of code
+@import './imports/b-code/b-btn';
+
+//layouts
+@import './layouts/header';
+@import './layouts/footer';
