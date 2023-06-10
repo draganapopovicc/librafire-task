@@ -1,0 +1,42 @@
+.ask-team {
+  background-image: url('/dist/images/ask-team.png');
+  background-position: center center;
+  background-size: cover;
+  min-height: 570px;
+  color: $white;
+  display: flex;
+  align-items: center;
+
+  .wrapper {
+    width: 100%;
+  }
+
+  &__box {
+    @media (min-width: $media-tablet) {
+      padding-left: 38%;
+    }
+
+    @media (min-width: $media-desktop) {
+      padding-left: 42.5%;
+    }
+  }
+
+  &__subtitle {
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: 500;
+    margin-bottom: 32px;
+    margin-top: 15px;
+
+    @media (min-width: $media-tablet) {
+      font-size: 30px;
+      line-height: 34px;
+    }
+
+    @media (min-width: $media-desktop) {
+      font-size: 35px;
+      line-height: 42px;
+      margin-top: 0;
+    }
+  }
+}
