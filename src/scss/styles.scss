@@ -4,6 +4,9 @@
 @import './base/variables';
 @import './base/common-style';
 
+// Mixins
+@import './imports/mixins/text-animation';
+
 // Block of code
 @import './imports/b-code/b-btn';
 

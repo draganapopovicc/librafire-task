@@ -1,0 +1,46 @@
+@mixin in($animationDuration: 0.3s) {
+  .b-btn__text {
+    animation-name: mouse-in;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.1s;
+    animation-duration: $animationDuration;
+  }
+}
+
+@mixin out($animationDuration: 0.3s) {
+  .b-btn__text {
+    animation-name: mouse-out;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.1s;
+    animation-duration: $animationDuration;
+  }
+}
+
+@keyframes mouse-in {
+  0% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(6%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes mouse-out {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  70% {
+    transform: translateY(6%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
