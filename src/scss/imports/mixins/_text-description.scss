@@ -1,0 +1,5 @@
+@mixin text-description($text-color: $text-color-light) {
+  margin-bottom: 23px;
+  line-height: 24px;
+  color: $text-color;
+}
