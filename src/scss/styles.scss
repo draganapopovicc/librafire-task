@@ -6,9 +6,11 @@
 
 // Mixins
 @import './imports/mixins/text-animation';
+@import './imports/mixins/link-underlined';
 
 // Block of code
 @import './imports/b-code/b-btn';
+@import './imports/b-code/b-title';
 
 //layouts
 @import './layouts/header';
