@@ -1,0 +1,54 @@
+.promotion {
+  margin: 50px 0;
+
+  @media (min-width: $media-desktop) {
+    margin: 94px 0 80px;
+  }
+
+  &__image {
+    @include background-image('/dist/images/promotion.png');
+    background-image: linear-gradient(271.4deg, rgba(109, 194, 229, 0) 1.19%, #7bc5f4 53.06%), url('/dist/images/promotion.png');
+    border-radius: $border-radius;
+    display: flex;
+    align-items: center;
+    padding: 30px 15px;
+    position: relative;
+
+    @media (min-width: $media-desktop) {
+      padding-left: 122px;
+    }
+  }
+
+  .b-title {
+    margin-bottom: 32px;
+  }
+
+  &__desc {
+    max-width: 630px;
+
+    p {
+      @include text-description($white);
+
+      @media (min-width: $media-desktop) {
+        width: 90%;
+      }
+    }
+  }
+
+  &__badge {
+    background: $white;
+    padding: 8px 10px;
+    border-radius: 5px;
+    color: $text-color-ultra-light;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    font-weight: 500;
+
+    @media (min-width: $media-tablet) {
+      top: 20px;
+      right: 20px;
+    }
+  }
+}

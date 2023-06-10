@@ -8,6 +8,7 @@
 @import './imports/mixins/text-animation';
 @import './imports/mixins/link-underlined';
 @import './imports/mixins/text-description';
+@import './imports/mixins/background-image';
 
 // Block of code
 @import './imports/b-code/b-btn';
@@ -20,3 +21,4 @@
 //sections
 @import './sections/ask-team';
 @import './sections/myUQ';
+@import './sections/promotion';
