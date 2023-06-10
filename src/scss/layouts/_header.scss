@@ -1,0 +1,232 @@
+.header {
+  padding: 25px 0; //temporarily
+  position: relative;
+  background: rgb(186, 150, 21); //temporarily
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+
+    @media (min-width: $media-desktop) {
+      justify-content: space-between;
+      gap: 20px;
+    }
+  }
+
+  &__logo {
+    @media (max-width: $media-desktop) {
+      margin-right: auto;
+    }
+
+    img {
+      @media (max-width: $media-desktop-full) {
+        width: 70%;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+
+    @media (min-width: $media-desktop) {
+      gap: 35px;
+    }
+
+    @media (min-width: $media-desktop-full) {
+      gap: 61px;
+    }
+  }
+
+  .nav {
+    @media (max-width: $media-desktop) {
+      max-height: 0;
+      height: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 100%;
+      background: rgb(186, 150, 21); //temporarily
+      left: 0;
+      right: 0;
+      padding: 0 20px;
+      transition: max-height 0.4s ease-out, opacity 0.9s ease-out, visibility 0.4s ease-out, height 0.4s ease-out;
+      overflow: hidden;
+
+      &.opened {
+        max-height: 1000px;
+        visibility: visible;
+        z-index: 10;
+        height: calc(100vh - 70px);
+        padding: 0 20px;
+      }
+
+      &__list {
+        padding-top: 50px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      &__item {
+        text-align: center;
+
+        .b-btn {
+          font-weight: 700;
+          font-size: 20px;
+          padding: 15px 0;
+          display: inline-block;
+        }
+      }
+    }
+
+    @media (min-width: $media-desktop) {
+      &__list {
+        display: flex;
+        gap: 20px;
+      }
+
+      &__item {
+        flex: 0 0 auto;
+      }
+    }
+
+    @media (min-width: $media-desktop-full) {
+      &__list {
+        gap: 31px;
+      }
+    }
+  }
+
+  &__user {
+    margin-right: 20px;
+
+    @media (min-width: $media-desktop) {
+      display: none;
+    }
+  }
+
+  &__login {
+    background: $white;
+    padding: 5px;
+    border-radius: $btn-border-radius;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+
+    @media (min-width: $media-desktop-full) {
+      padding-right: 19px;
+    }
+
+    @media (max-width: $media-desktop) {
+      display: none;
+    }
+
+    @media (min-width: $media-desktop-full) {
+      &::after,
+      &::before {
+        content: '';
+        width: 1px;
+        position: absolute;
+        background: $text-color-ultra-light;
+        top: 0;
+        bottom: 0;
+        left: -30px;
+      }
+
+      &::after {
+        left: unset;
+        right: -30px;
+      }
+    }
+
+    &-desc {
+      font-weight: 500;
+
+      @media (max-width: $media-desktop-full) {
+        display: none;
+      }
+    }
+  }
+
+  &__menu {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    margin-left: 20px;
+
+    @media (min-width: $media-desktop) {
+      display: none;
+    }
+
+    &.opened {
+      span {
+        background: transparent;
+
+        &::before {
+          transform: rotate(45deg) translate(0, 0px);
+          height: 3px;
+        }
+
+        &::after {
+          transform: rotate(-45deg) translate(0, 0);
+          height: 3px;
+        }
+      }
+    }
+
+    span {
+      width: 25px;
+      height: 3px;
+      background-color: $navy-blue;
+      display: inline-block;
+      position: relative;
+      transition: width 0.3s;
+
+      &::before,
+      &::after {
+        content: '';
+        width: 25px;
+        height: 3px;
+        background-color: $navy-blue;
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: background-color 0.5s, transform 0.5s;
+        transform: rotate(0) translate(0, 7.5px);
+      }
+
+      &::after {
+        left: 0;
+        top: 0;
+        transition: background-color 0.5s, transform 0.5s;
+        transform: rotate(0) translate(0, -7.5px);
+      }
+    }
+  }
+
+  &__language {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+
+    @media (max-width: $media-desktop) {
+      font-weight: 700;
+      font-size: 18px;
+
+      svg {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}
