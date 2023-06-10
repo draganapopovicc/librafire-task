@@ -1,8 +1,5 @@
 .ask-team {
-  background-image: url('/dist/images/ask-team.png');
-  background-position: center center;
-  background-size: cover;
-  min-height: 570px;
+  @include background-image('/dist/images/ask-team.png');
   color: $white;
   display: flex;
   align-items: center;
