@@ -1,0 +1,15 @@
+@mixin link-underlined {
+  position: relative;
+  z-index: 2;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+    left: 0;
+    height: 0.3px;
+    background: darken($white, 70%);
+    z-index: -1;
+  }
+}
