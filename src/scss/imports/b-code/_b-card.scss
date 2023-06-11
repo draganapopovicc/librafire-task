@@ -1,0 +1,89 @@
+.b-card {
+  border-radius: $border-radius;
+  overflow: hidden;
+  cursor: default;
+
+  button {
+    cursor: default;
+  }
+
+  &:hover {
+    figure {
+      img {
+        transform: perspective(1px) scale(1.15);
+        border-radius: $border-radius $border-radius 0 0;
+      }
+    }
+
+    .b-card__box {
+      background: $border-color-light;
+    }
+
+    .b-card__btn {
+      svg {
+        transform: translateX(11px);
+      }
+    }
+  }
+
+  &__badge-wrap {
+    position: relative;
+  }
+
+  &__badge {
+    @include badge;
+    bottom: -15px;
+    left: 15px;
+    padding: 6px 10px;
+  }
+
+  figure {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      border-radius: $border-radius;
+      transition: transform 0.4s, border-radius 0.4s;
+    }
+  }
+
+  &__box {
+    padding: 30px 14px;
+    transition: background-color 0.4s;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 6px;
+  }
+
+  &__desc {
+    line-height: 24px;
+    font-style: italic;
+    color: $text-color-light;
+    display: block;
+    margin-bottom: 9px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: $navy-blue;
+
+    svg {
+      transition: transform 0.4s;
+    }
+  }
+
+  &--light-text {
+    color: $white;
+
+    .b-card__btn {
+      color: $white;
+    }
+  }
+}

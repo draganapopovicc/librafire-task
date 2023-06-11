@@ -9,10 +9,13 @@
 @import './imports/mixins/link-underlined';
 @import './imports/mixins/text-description';
 @import './imports/mixins/background-image';
+@import './imports/mixins/badge';
+@import './imports/mixins/card';
 
 // Block of code
 @import './imports/b-code/b-btn';
 @import './imports/b-code/b-title';
+@import './imports/b-code/b-card';
 
 //layouts
 @import './layouts/header';
@@ -23,3 +26,4 @@
 @import './sections/myUQ';
 @import './sections/promotion';
 @import './sections/links';
+@import './sections/top-picks';
