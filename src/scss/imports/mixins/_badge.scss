@@ -1,0 +1,12 @@
+@mixin badge($color: $white, $background: $text-color-ultra-light) {
+  background: $background;
+  padding: 8px 10px;
+  border-radius: 5px;
+  color: $color;
+  position: absolute;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
