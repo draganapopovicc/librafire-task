@@ -10,7 +10,6 @@
 @import './imports/mixins/text-description';
 @import './imports/mixins/background-image';
 @import './imports/mixins/badge';
-@import './imports/mixins/card';
 
 // Block of code
 @import './imports/b-code/b-btn';
@@ -27,3 +26,5 @@
 @import './sections/promotion';
 @import './sections/links';
 @import './sections/top-picks';
+@import './sections/hero';
+@import './sections/slider';
