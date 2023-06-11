@@ -1,0 +1,40 @@
+.top-picks {
+  .b-title {
+    margin-bottom: 30px;
+  }
+
+  &__all {
+    display: grid;
+    gap: 20px;
+    @media (min-width: $media-tablet-small) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: $media-desktop) {
+      gap: 30px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .b-card {
+    &:nth-child(1) {
+      .b-card__badge {
+        background: $blue;
+      }
+    }
+    &:nth-child(2) {
+      .b-card__badge {
+        background: $pink;
+      }
+    }
+    &:nth-child(3) {
+      .b-card__badge {
+        background: $dark-blue;
+      }
+    }
+    &:nth-child(4) {
+      .b-card__badge {
+        background: $dark-blue;
+      }
+    }
+  }
+}
