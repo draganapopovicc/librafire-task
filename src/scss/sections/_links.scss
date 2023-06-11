@@ -1,0 +1,254 @@
+.links {
+  margin: 70px 0;
+
+  .b-title {
+    margin-bottom: 30px;
+  }
+
+  &__all {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+
+    @media (min-width: $media-tablet) {
+      gap: 55px 25px;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    }
+  }
+
+  .link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+    cursor: default;
+
+    @media (min-width: $media-tablet) {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &:hover {
+      .link__img {
+        background: $white;
+        border-color: $blue;
+
+        svg {
+          color: $blue;
+        }
+      }
+
+      .link__title {
+        svg {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
+
+    &__img {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $blue;
+      color: $white;
+      transition: background-color 0.6s, border-color 0.6s;
+      border: 2px solid transparent;
+      flex: 0 0 auto;
+      width: 78px;
+      height: 78px;
+
+      svg {
+        transition: all 0.6s;
+      }
+    }
+
+    &__desc {
+      @media (max-width: $media-tablet) {
+        text-align: center;
+      }
+    }
+
+    &__title {
+      font-weight: 700;
+      color: $blue;
+      margin-bottom: 8px;
+      position: relative;
+      display: inline-block;
+      font-size: 20px;
+      line-height: 24px;
+
+      svg {
+        color: $navy-blue;
+        margin-left: 4px;
+        transition: opacity 0.45s, transform 0.6s;
+        opacity: 0;
+        transform: translateX(-8px);
+      }
+    }
+
+    &__subtitle {
+      line-height: 20px;
+      color: $text-color-light;
+    }
+
+    &:nth-child(2) {
+      &:hover {
+        .link__img {
+          background: $white;
+          border-color: $yellow;
+
+          svg {
+            color: $yellow;
+          }
+        }
+      }
+      .link {
+        &__img {
+          background: $yellow;
+        }
+
+        &__title {
+          color: $yellow;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      &:hover {
+        .link__img {
+          background: $white;
+          border-color: $navy-blue;
+
+          svg {
+            color: $navy-blue;
+          }
+        }
+      }
+      .link {
+        &__img {
+          background: $navy-blue;
+        }
+
+        &__title {
+          color: $navy-blue;
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      &:hover {
+        .link__img {
+          background: $white;
+          border-color: $light-blue;
+
+          svg {
+            color: $light-blue;
+          }
+        }
+      }
+      .link {
+        &__img {
+          background: $light-blue;
+        }
+
+        &__title {
+          color: $light-blue;
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      &:hover {
+        .link__img {
+          background: $white;
+          border-color: $orange;
+
+          svg {
+            color: $orange;
+          }
+        }
+      }
+      .link {
+        &__img {
+          background: $orange;
+        }
+
+        &__title {
+          color: $orange;
+        }
+      }
+    }
+
+    &:nth-child(6) {
+      &:hover {
+        .link__img {
+          background: $white;
+          border-color: $pink;
+
+          svg {
+            color: $pink;
+          }
+        }
+      }
+      .link {
+        &__img {
+          background: $pink;
+        }
+
+        &__title {
+          color: $pink;
+        }
+      }
+    }
+
+    &:nth-child(7) {
+      &:hover {
+        .link__img {
+          background: $white;
+          border-color: $dark-blue;
+
+          svg {
+            color: $dark-blue;
+          }
+        }
+      }
+      .link {
+        &__img {
+          background: $dark-blue;
+        }
+
+        &__title {
+          color: $dark-blue;
+        }
+      }
+    }
+
+    &:nth-child(8) {
+      &:hover {
+        .link__img {
+          background: $white;
+          border-color: $purple;
+
+          svg {
+            color: $purple;
+          }
+        }
+      }
+      .link {
+        &__img {
+          background: $purple;
+        }
+
+        &__title {
+          color: $purple;
+        }
+      }
+    }
+  }
+}
