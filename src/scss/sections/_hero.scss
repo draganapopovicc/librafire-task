@@ -9,6 +9,38 @@
   color: $white;
   position: relative;
 
+  &__arrow {
+    position: absolute;
+    width: 160px;
+    height: auto;
+
+    &--right {
+      left: 20px;
+      bottom: 76px;
+    }
+
+    &--left {
+      right: 20px;
+      top: 140px;
+    }
+
+    @media (min-width: $media-tablet) {
+      width: 200px;
+    }
+
+    @media (min-width: $media-desktop) {
+      width: auto;
+
+      &--right {
+        left: 50px;
+      }
+
+      &--left {
+        right: 50px;
+      }
+    }
+  }
+
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -62,12 +94,6 @@
       margin-top: 78px;
     }
 
-    .b-btn {
-      @media (max-width: $media-tablet) {
-        width: 100%;
-      }
-    }
-
     &__input {
       display: flex;
       align-items: center;
@@ -82,7 +108,6 @@
 
       input {
         border: none;
-
         background: transparent;
         width: 100%;
         max-width: 500px;
@@ -173,7 +198,7 @@
           }
 
           &:hover {
-            background: #f5f5f5;
+            background: $body-bg-color;
           }
 
           &.selected {
