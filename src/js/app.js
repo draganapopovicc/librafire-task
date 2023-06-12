@@ -3,6 +3,7 @@ if (document.querySelector('.header__menu')) {
   document.querySelector('.header__menu').addEventListener('click', (e) => {
     e.currentTarget.classList.toggle('opened');
     document.querySelector('.nav').classList.toggle('opened');
+    document.querySelector('.header').classList.toggle('opened');
 
     if (document.querySelector('.nav').classList.contains('opened')) {
       document.body.style.overflow = 'hidden';
@@ -64,3 +65,61 @@ if (document.querySelector('.myUQ-video')) {
     });
   });
 }
+
+if (document.querySelector('.search__select')) {
+  document.querySelector('.search__select').addEventListener('click', (e) => {
+    e.target.closest('.search__select').classList.toggle('active');
+  });
+}
+
+if (document.querySelectorAll('.options li')) {
+  document.querySelectorAll('.options li').forEach((option) => {
+    option.addEventListener('click', (e) => {
+      document.querySelectorAll('.options li').forEach((option) => {
+        option.classList.remove('selected');
+      });
+
+      e.target.classList.add('selected');
+      let selectedItem = e.target.textContent;
+      document.querySelector('.search__select--selected').innerHTML = selectedItem;
+    });
+  });
+}
+
+//Slider
+let previousBtn = 0;
+let currentIndex = 0;
+let lastBtn = document.querySelector('.slider__dots span:last-of-type').getAttribute('data-attr');
+let sliderWrap = document.querySelector('.slider__wrap');
+
+document.querySelectorAll('.slider__dots span').forEach((bullet) => {
+  bullet.addEventListener('click', (e) => {
+    let figureWidth = document.querySelector('.slider__wrap .b-card').offsetWidth;
+    let currentBtn = e.target.getAttribute('data-attr');
+    let gap = 30;
+
+    document.querySelectorAll('.slider__dots span').forEach((bullet) => {
+      bullet.classList.remove('active--right', 'active--left');
+    });
+
+    if (currentBtn == 0) {
+      currentIndex--;
+      sliderWrap.scrollLeft -= figureWidth + gap;
+      e.target.classList.add('active--left');
+    } else if (currentBtn == lastBtn) {
+      currentIndex++;
+      sliderWrap.scrollLeft += figureWidth + gap;
+      e.target.classList.add('active--right');
+    } else if (currentBtn > previousBtn) {
+      currentIndex++;
+      sliderWrap.scrollLeft += figureWidth + gap;
+      e.target.classList.add('active--right');
+    } else if (currentBtn < previousBtn) {
+      currentIndex--;
+      sliderWrap.scrollLeft -= figureWidth + gap;
+      e.target.classList.add('active--left');
+    }
+
+    previousBtn = e.target.getAttribute('data-attr');
+  });
+});
