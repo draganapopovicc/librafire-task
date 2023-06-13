@@ -8,7 +8,6 @@ import cleanCss from 'gulp-clean-css';
 import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
-import imagemin from 'gulp-imagemin';
 import webpack from 'webpack-stream';
 import { deleteAsync } from 'del';
 import yargs from 'yargs';
@@ -28,9 +27,7 @@ export const styles = (done) => {
   done();
 };
 
-export const images = (done) => {
-  return src('src/images/**/*.{jpg,jpeg,png,svg,gif}').pipe(imagemin()).pipe(dest('dist/images'));
-};
+
 
 export const scripts = (done) => {
   return src('src/js/app.js')
@@ -47,7 +44,7 @@ export const scripts = (done) => {
 };
 
 export const copy = (done) => {
-  return src(['src/**/*', '!src/{images,js,scss}', '!src/{images,js,scss}/**/*']).pipe(dest('dist'));
+  return src(['src/**/*', '!src/{js,scss}', '!src/{js,scss}/**/*']).pipe(dest('dist'));
 };
 
 export const clean = () => {
@@ -56,10 +53,9 @@ export const clean = () => {
 
 export const watchForChanges = (done) => {
   watch('src/scss/**/*.scss', series(styles));
-  watch('src/images/**/*.{jpg,jpeg,png,svg,gif}', series(images));
   watch('src/js/**/*.js', series(scripts));
 };
 
-export const dev = series(parallel(styles, images, scripts, copy), watchForChanges);
-export const build = series(clean, parallel(styles, images, scripts, copy));
+export const dev = series(parallel(styles, scripts, copy), watchForChanges);
+export const build = series(clean, parallel(styles, scripts, copy));
 export default dev;
