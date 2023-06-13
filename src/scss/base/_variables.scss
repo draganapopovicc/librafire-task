@@ -2,6 +2,7 @@
 $font-family-primary: 'Urbanist', sans-serif;
 
 //breakpoints
+$media-tablet-small: 550px;
 $media-tablet: 768px;
 $media-desktop: 1080px;
 $media-desktop-full: 1520px;
@@ -9,6 +10,7 @@ $border-radius: 15px;
 $btn-border-radius: 50px;
 
 // colors
+$body-bg-color: #f5f5f5;
 $border-color-light: #fcf9f7;
 $white: #fff;
 $navy-blue: #050835;
@@ -19,8 +21,8 @@ $yellow: #ebaa3f;
 $orange: #f68523;
 $pink: #cd61ed;
 $purple: #873efd;
-$pink: #cd61ed;
 $footer-bg-hover: #37395a;
+$linear-gradient-secondary-color: #f80833;
 
 //text colors
 $text-color-dark: #2d2e33;

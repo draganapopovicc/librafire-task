@@ -1,8 +1,13 @@
 .links {
-  margin: 70px 0;
+  margin: 80px 0;
 
   .b-title {
     margin-bottom: 30px;
+
+    @media (max-width: $media-tablet) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__all {
@@ -41,9 +46,9 @@
       }
 
       .link__title {
-        svg {
+        &::after {
           opacity: 1;
-          transform: translateX(0);
+          transform: translateX(44px);
         }
       }
     }
@@ -75,20 +80,27 @@
     }
 
     &__title {
-      font-weight: 700;
+      @include text-subtitle;
       color: $blue;
       margin-bottom: 8px;
       position: relative;
       display: inline-block;
-      font-size: 20px;
-      line-height: 24px;
 
-      svg {
-        color: $navy-blue;
-        margin-left: 4px;
+      &::after {
+        content: '';
+        -webkit-mask: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9" fill="none"> <path d="M3.82707 0.60313L4.27307 0.14513C4.31711 0.0992449 4.36998 0.0627356 4.4285 0.0377958C4.48701 0.0128559 4.54996 0 4.61357 0C4.67717 0 4.74012 0.0128559 4.79864 0.0377958C4.85715 0.0627356 4.91002 0.0992449 4.95407 0.14513L8.85407 4.14513C8.94568 4.23859 8.99699 4.36425 8.99699 4.49513C8.99699 4.62601 8.94568 4.75167 8.85407 4.84513L4.95307 8.85313C4.90902 8.89902 4.85615 8.93552 4.79764 8.96046C4.73912 8.9854 4.67617 8.99826 4.61257 8.99826C4.54896 8.99826 4.48601 8.9854 4.4275 8.96046C4.36898 8.93552 4.31611 8.89902 4.27207 8.85313L3.82607 8.39513C3.73338 8.30031 3.68216 8.17256 3.68366 8.03997C3.68516 7.90739 3.73926 7.78083 3.83407 7.68813L6.25407 5.32213H0.482066C0.418111 5.32148 0.354912 5.30823 0.296076 5.28315C0.23724 5.25807 0.183921 5.22165 0.139162 5.17596C0.0944035 5.13028 0.0590827 5.07622 0.0352165 5.01688C0.0113503 4.95754 -0.000593861 4.89409 6.61289e-05 4.83013V4.17113C-0.000992015 4.10693 0.0106579 4.04314 0.0343453 3.98346C0.0580327 3.92377 0.0932899 3.86936 0.138088 3.82336C0.182886 3.77735 0.23634 3.74066 0.295374 3.71539C0.354408 3.69012 0.417856 3.67678 0.482066 3.67613H6.25507L3.83507 1.31013C3.74026 1.21743 3.68616 1.09087 3.68466 0.958287C3.68316 0.825702 3.73438 0.697951 3.82707 0.60313Z" fill="currentColor"/></svg>');
+        background: $navy-blue;
+        -webkit-mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        right: 23px;
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        position: absolute;
+        transform: translateX(33px);
         transition: opacity 0.45s, transform 0.6s;
+        top: 6px;
         opacity: 0;
-        transform: translateX(-8px);
       }
     }
 

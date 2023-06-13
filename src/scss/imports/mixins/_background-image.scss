@@ -3,5 +3,9 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 570px;
+  min-height: 470px;
+
+  @media (min-width: $media-tablet) {
+    min-height: 570px;
+  }
 }

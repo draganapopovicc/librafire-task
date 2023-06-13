@@ -1,8 +1,9 @@
 .promotion {
   margin: 50px 0;
+  color: $white;
 
   @media (min-width: $media-desktop) {
-    margin: 94px 0 80px;
+    margin: 79px 0 80px;
   }
 
   &__image {
@@ -36,15 +37,9 @@
   }
 
   &__badge {
-    background: $white;
-    padding: 8px 10px;
-    border-radius: 5px;
-    color: $text-color-ultra-light;
-    position: absolute;
+    @include badge();
     top: 10px;
     right: 10px;
-    font-size: 14px;
-    font-weight: 500;
 
     @media (min-width: $media-tablet) {
       top: 20px;

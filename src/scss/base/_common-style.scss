@@ -6,9 +6,10 @@ html {
   box-sizing: border-box;
 }
 
-body,
-button {
+body {
   font-family: $font-family-primary;
+  color: $text-color-dark;
+  background: $body-bg-color;
 }
 
 .wrapper {

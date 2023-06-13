@@ -1,11 +1,15 @@
 .header {
-  padding: 25px 0; //temporarily
+  padding: 25px 0;
   position: relative;
-  background: rgb(186, 150, 21); //temporarily
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 999;
 
   .wrapper {
     display: flex;
     align-items: center;
+    position: relative;
 
     @media (min-width: $media-desktop) {
       justify-content: space-between;
@@ -36,6 +40,10 @@
     @media (min-width: $media-desktop-full) {
       gap: 61px;
     }
+
+    @media (min-width: 1700px) {
+      margin-right: -72px;
+    }
   }
 
   .nav {
@@ -44,8 +52,8 @@
       height: 0;
       visibility: hidden;
       position: absolute;
-      top: 100%;
-      background: rgb(186, 150, 21); //temporarily
+      top: 150%;
+      background: $yellow; //temporarily
       left: 0;
       right: 0;
       padding: 0 20px;
@@ -74,8 +82,7 @@
         text-align: center;
 
         .b-btn {
-          font-weight: 700;
-          font-size: 20px;
+          @include text-subtitle;
           padding: 15px 0;
           display: inline-block;
         }
@@ -102,6 +109,7 @@
 
   &__user {
     margin-right: 20px;
+    cursor: pointer;
 
     @media (min-width: $media-desktop) {
       display: none;
