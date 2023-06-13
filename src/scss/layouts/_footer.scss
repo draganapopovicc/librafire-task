@@ -1,3 +1,5 @@
+$media-tablet: 820px;
+
 .footer {
   background: $navy-blue;
   color: $white;
@@ -5,14 +7,15 @@
   &__top {
     display: flex;
     flex-direction: column;
-    flex-direction: row;
-    flex-wrap: wrap;
+   
     padding: 60px 0 40px;
     justify-content: center;
     gap: 30px;
 
     @media (min-width: $media-tablet) {
       gap: 50px;
+      flex-direction: row;
+       flex-wrap: wrap;
     }
 
     @media (min-width: $media-desktop) {
